@@ -1,0 +1,113 @@
+.header {
+  height: 80px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-primary); /* Use variable */
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(10px); /* Modern touch */
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-secondary); /* Use variable */
+  padding: 10px 20px;
+  border-radius: 30px;
+  width: 300px;
+  color: var(--text-secondary); /* Use variable */
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  color: var(--text-primary); /* Use variable */
+  font-family: inherit;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--icon-color); /* Use variable */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.iconBtn:hover {
+  background-color: var(--border-color); /* Slight background on hover */
+  color: var(--text-primary);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--text-primary); /* Use variable */
+  cursor: pointer;
+}
+
+.avatar {
+  background-color: var(--bg-secondary);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--card-shadow);
+}
+
+/* Language Selector Styles */
+.languageSelector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.langDropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 100;
+  border: 1px solid var(--border-color);
+}
+
+.langOption {
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.langOption:hover {
+  background-color: var(--bg-primary);
+}

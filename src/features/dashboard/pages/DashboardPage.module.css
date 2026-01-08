@@ -1,0 +1,238 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  margin-bottom: 8px;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2b3674;
+  margin-bottom: 4px;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #a3aed0;
+  font-weight: 500;
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.statHeader {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.statIconWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* Specific icon background colors can be handled via inline styles or utility classes in JSX */
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2b3674;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  color: #a3aed0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.statDivider {
+  height: 1px;
+  background-color: #e0e5f2;
+  margin-bottom: 16px;
+}
+
+.statFooter {
+  display: flex;
+  justify-content: space-between;
+  color: #a3aed0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.statFooter span strong {
+  color: #2b3674;
+  margin-left: 4px;
+}
+
+/* Main Grid Layout */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sectionCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2b3674;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Quick Links Grid */
+.quickLinksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.quickLinkItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.quickLinkItem:hover {
+  transform: translateY(-2px);
+}
+
+.quickLinkIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  background-color: white; /* Fallback */
+}
+
+.quickLinkLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3674;
+  text-align: center;
+}
+
+/* Financial Column */
+.financialColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.financialCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.financialLabel {
+  font-size: 16px;
+  color: #a3aed0;
+  margin-bottom: 8px;
+}
+
+.financialValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2b3674;
+}
+
+/* Calendar / Schedule */
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #2b3674;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 8px 0;
+}
+
+.dayName {
+  font-size: 14px;
+  color: #a3aed0;
+  margin-bottom: 12px;
+}
+
+.calendarDay {
+  font-size: 14px;
+  color: #2b3674;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.calendarDay:hover {
+  background-color: #f4f7fe;
+  color: #4318ff;
+}
+
+.calendarDay.active {
+  background-color: #4318ff;
+  color: white;
+}

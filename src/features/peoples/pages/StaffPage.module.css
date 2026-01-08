@@ -1,0 +1,320 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2b3674;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #a3aed0;
+  margin-top: 4px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exportButton,
+.importButton {
+  background-color: white;
+  color: #556ee6;
+  border: 1px solid #556ee6;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.exportButton:hover,
+.importButton:hover {
+  background-color: #eef2ff;
+}
+
+.addButton {
+  background-color: #556ee6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #485ec4;
+}
+
+.contentCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.entriesControl {
+  color: #a3aed0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.entriesSelect {
+  border: 1px solid #e0e5f2;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #2b3674;
+  outline: none;
+  cursor: pointer;
+}
+
+.entriesSelect:focus {
+  border-color: #556ee6;
+}
+
+.searchInput {
+  padding: 10px 16px;
+  border: 1px solid #e0e5f2;
+  border-radius: 8px;
+  outline: none;
+  color: #2b3674;
+  min-width: 250px;
+  transition: all 0.2s;
+}
+
+.searchInput:focus {
+  border-color: #556ee6;
+  box-shadow: 0 0 0 2px rgba(85, 110, 230, 0.1);
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 20px; /* Space for dropdown shadow if needed */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a3aed0;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e0e5f2;
+  background-color: #fafbff;
+  white-space: nowrap;
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.alignRight {
+  justify-content: flex-end;
+}
+
+.sortIcon {
+  color: #a3aed0;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.thContent:hover .sortIcon {
+  opacity: 1;
+}
+
+.table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #2b3674;
+  border-bottom: 1px solid #f4f7fe;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #fafbff;
+}
+
+.nameCell {
+  font-weight: 500;
+}
+
+/* Badges */
+.roleBadge {
+  background-color: #1976d2;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.activeStatus {
+  background-color: #388e3c;
+  color: white;
+}
+
+.inactiveStatus {
+  background-color: #d32f2f;
+  color: white;
+}
+
+/* Actions & Dropdown */
+.actionCell {
+  position: relative;
+  text-align: right;
+}
+
+.actionToggleBtn {
+  background: none;
+  border: none;
+  color: #a3aed0;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionToggleBtn:hover {
+  background-color: #e0e5f2;
+  color: #2b3674;
+}
+
+.actionMenu {
+  position: absolute;
+  right: 0; /* Aligned to the right edge of the cell/button */
+  top: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f4f7fe;
+  z-index: 100;
+  width: 180px;
+  text-align: left;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.actionItem {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #2b3674;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s;
+}
+
+.actionItem:hover {
+  background-color: #f4f7fe;
+  color: #556ee6;
+}
+
+.deleteAction:hover {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #a3aed0;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pageBtn {
+  padding: 6px 14px;
+  border: 1px solid #e0e5f2;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #2b3674;
+  transition: all 0.2s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background-color: #f4f7fe;
+  border-color: #556ee6;
+}
+
+.activePage {
+  background-color: #556ee6;
+  color: white;
+  border-color: #556ee6;
+}
+
+.activePage:hover {
+  background-color: #485ec4;
+}

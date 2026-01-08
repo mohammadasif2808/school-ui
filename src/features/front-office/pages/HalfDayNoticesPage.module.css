@@ -1,0 +1,126 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2b3674;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #a3aed0;
+  margin-top: 4px;
+}
+
+.contentCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.filterRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2b3674;
+}
+
+.input, .select {
+  padding: 10px 16px;
+  border: 1px solid #e0e5f2;
+  border-radius: 8px;
+  outline: none;
+  color: #2b3674;
+  font-size: 14px;
+  height: 42px;
+}
+
+.filterButton {
+  background-color: #556ee6;
+  color: white;
+  border: none;
+  padding: 0 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 42px;
+  transition: background-color 0.2s;
+}
+
+.filterButton:hover {
+  background-color: #485ec4;
+}
+
+.printButton {
+  background-color: #67ced8;
+  color: white;
+  border: none;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.printButton:hover {
+  background-color: #5bbbc5;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3674;
+  border: 1px solid #f4f7fe;
+  background-color: #fff;
+}
+
+.table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #2b3674;
+  border: 1px solid #f4f7fe;
+}
+
+.noData {
+  text-align: center;
+  padding: 20px;
+  color: #a3aed0;
+  font-size: 14px;
+  background-color: #f8f9fc;
+}

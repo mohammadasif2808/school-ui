@@ -1,0 +1,51 @@
+:root {
+  /* Light Theme (Default) */
+  --bg-primary: #f4f7fe;
+  --bg-secondary: #ffffff;
+  --text-primary: #2b3674;
+  --text-secondary: #a3aed0;
+  --accent-color: #4318ff;
+  --accent-hover: #3311cc;
+  --border-color: #e0e5f2;
+  --card-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  --input-bg: #f4f7fe;
+  --icon-color: #a3aed0;
+}
+
+[data-theme='dark'] {
+  /* Dark Theme */
+  --bg-primary: #0b1437;
+  --bg-secondary: #111c44;
+  --text-primary: #ffffff;
+  --text-secondary: #a3aed0;
+  --accent-color: #7551ff;
+  --accent-hover: #5e3db3;
+  --border-color: #2b3674; /* Darker border for dark mode */
+  --card-shadow: none; /* Often cleaner in dark mode */
+  --input-bg: #1b254b;
+  --icon-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif; /* Adding a nice font if available, or fallback */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Reset tweaks */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

@@ -1,0 +1,264 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2b3674;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #a3aed0;
+  margin-top: 4px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.importButton,
+.exportButton {
+  background-color: white;
+  color: #556ee6;
+  border: 1px solid #556ee6;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.importButton:hover,
+.exportButton:hover {
+  background-color: #f4f7fe;
+}
+
+.addButton {
+  background-color: #556ee6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #485ec4;
+}
+
+.contentCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.filterRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  .filterRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a3aed0;
+}
+
+.input, .select {
+  padding: 10px 16px;
+  border: 1px solid #e0e5f2;
+  border-radius: 8px;
+  outline: none;
+  color: #2b3674;
+  font-size: 14px;
+  height: 42px;
+}
+
+.input:focus, .select:focus {
+  border-color: #556ee6;
+}
+
+.filterButton {
+  background-color: #556ee6;
+  color: white;
+  border: none;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 42px;
+  transition: background-color 0.2s;
+}
+
+.filterButton:hover {
+  background-color: #485ec4;
+}
+
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.entriesControl {
+  color: #a3aed0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.entriesSelect {
+  border: 1px solid #e0e5f2;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #2b3674;
+  outline: none;
+}
+
+.entriesSelect:focus {
+  border-color: #556ee6;
+}
+
+.searchInput {
+  padding: 10px 16px;
+  border: 1px solid #e0e5f2;
+  border-radius: 8px;
+  outline: none;
+  color: #2b3674;
+  min-width: 250px;
+}
+
+.searchInput:focus {
+  border-color: #556ee6;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a3aed0;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e0e5f2;
+  background-color: #fafbff;
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortIcon {
+  color: #a3aed0;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.thContent:hover .sortIcon {
+  opacity: 1;
+}
+
+.table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #2b3674;
+  border-bottom: 1px solid #f4f7fe;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #fafbff;
+}
+
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #a3aed0;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pageBtn {
+  background: none;
+  border: none;
+  color: #a3aed0;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.pageBtn:hover {
+  color: #556ee6;
+  background-color: #f4f7fe;
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,306 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2b3674;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #a3aed0;
+  margin-top: 4px;
+}
+
+/* Control Panel (Top Section) */
+.controlPanel {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.panelSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2b3674;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3674;
+}
+
+.select {
+  padding: 12px 16px;
+  border: 1px solid #e0e5f2;
+  border-radius: 10px;
+  outline: none;
+  color: #2b3674;
+  font-size: 14px;
+  background: #f8fbff;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232b3674' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  transition: all 0.2s;
+}
+
+.select:focus {
+  border-color: #556ee6;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(85, 110, 230, 0.1);
+}
+
+.fetchButton {
+  background: #556ee6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.fetchButton:hover {
+  background: #485ec4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(85, 110, 230, 0.2);
+}
+
+/* Student List Section */
+.listContainer {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.listHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f4f7fe;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2b3674;
+}
+
+.selectionInfo {
+  font-size: 14px;
+  color: #a3aed0;
+}
+
+.selectedCount {
+  color: #556ee6;
+  font-weight: 700;
+}
+
+/* Table Styles */
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a3aed0;
+  text-transform: uppercase;
+  background: #fafbff;
+  border-bottom: 1px solid #e0e5f2;
+}
+
+.table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #2b3674;
+  border-bottom: 1px solid #f4f7fe;
+  vertical-align: middle;
+}
+
+.table tr:hover {
+  background-color: #f8fbff;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #556ee6;
+}
+
+.avatarCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e0e5f2;
+  color: #556ee6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nameInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.studentName {
+  font-weight: 600;
+  color: #2b3674;
+}
+
+.rollNo {
+  font-size: 12px;
+  color: #a3aed0;
+}
+
+.statusBadge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #e6fffa;
+  color: #00b574;
+}
+
+.gradeBadge {
+  background: #fff7eb;
+  color: #ff9f1c;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Footer Actions */
+.listFooter {
+  padding: 20px 24px;
+  border-top: 1px solid #f4f7fe;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  background: #fafbff;
+}
+
+.promoteBtn {
+  background: #00b574;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 181, 116, 0.2);
+}
+
+.promoteBtn:hover {
+  background: #009661;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 181, 116, 0.3);
+}
+
+.promoteBtn:disabled {
+  background: #a3aed0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Empty State */
+.emptyState {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #a3aed0;
+}
+
+.emptyState p {
+  font-size: 16px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .controlPanel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .arrowContainer {
+    display: none;
+  }
+}

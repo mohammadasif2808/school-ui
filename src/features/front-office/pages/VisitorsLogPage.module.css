@@ -1,0 +1,88 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row specifically for the filters in VisitorsLog */
+.filterRow {
+  margin-bottom: 32px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  max-width: 800px;
+}
+
+.filterButton {
+  height: 48px; /* Matches standardized input height */
+}
+
+/* Row for entries control and table search */
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.entriesControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a3aed0;
+  font-size: 14px;
+}
+
+.entriesSelect {
+  width: 80px;
+}
+
+.tableSearch {
+  width: 250px;
+}
+
+/* Table Styles - Still specific to the log view */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a3aed0;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e0e5f2;
+}
+
+.table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #2b3674;
+  border-bottom: 1px solid #f4f7fe;
+}
+
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #a3aed0;
+  font-size: 14px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}

@@ -1,0 +1,206 @@
+.sidebar {
+  width: 280px;
+  background-color: var(--bg-secondary);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  border-right: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.brand {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandLogo {
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-color);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 24px 16px;
+}
+
+/* Custom Scrollbar */
+.scrollArea::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}
+
+.schoolCard {
+  background-color: var(--bg-primary); /* Slightly different from sidebar bg */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.schoolLogo {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.schoolName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 12px 0;
+}
+
+.sectionLine {
+  height: 1px;
+  flex: 1;
+  background-color: var(--border-color);
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  /* color: var(--text-secondary); */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* To push arrow to right */
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.navItemContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navItem:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.navItem.active {
+  background-color: var(--bg-primary); /* Or a light tint of accent color */
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+}
+
+.arrowIcon {
+  color: var(--text-secondary);
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.rotateArrow {
+  transform: rotate(90deg);
+}
+
+/* Submenu Styles */
+.submenu {
+  margin-left: 20px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.subItem {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.subItem::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.subItem:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+.subItem:hover::before {
+  background-color: var(--accent-color);
+  opacity: 1;
+}
+
+.subItem.active {
+  color: var(--accent-color);
+  font-weight: 600;
+  background-color: var(--bg-primary);
+}
+
+.subItem.active::before {
+  background-color: var(--accent-color);
+  opacity: 1;
+}

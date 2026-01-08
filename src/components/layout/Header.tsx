@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import { Bell, Search, User, Sun, Moon, Globe } from 'lucide-react';
+import { useTheme } from '../../context/ThemeContext';
+import styles from './Header.module.css';
+
+const Header: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
+  const [langOpen, setLangOpen] = useState<boolean>(false);
+  const [currentLang, setCurrentLang] = useState<string>('EN');
+
+  const handleLangSelect = (lang: string) => {
+    setCurrentLang(lang);
+    setLangOpen(false);
+  };
+
+  return (
+    <header className={styles.header}>
+      {/* Search Bar */}
+      <div className={styles.searchBar}>
+        <Search size={18} />
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      {/* Right Actions Area */}
+      <div className={styles.actions}>
+        
+        {/* Language Selector */}
+        <div className={styles.languageSelector}>
+          <button 
+            className={styles.iconBtn} 
+            onClick={() => setLangOpen(!langOpen)}
+            title="Select Language"
+          >
+            <Globe size={20} />
+            <span style={{ fontSize: '12px', fontWeight: 'bold', marginLeft: '4px' }}>{currentLang}</span>
+          </button>
+          
+          {langOpen && (
+            <div className={styles.langDropdown}>
+              <div className={styles.langOption} onClick={() => handleLangSelect('EN')}>🇺🇸 English</div>
+              <div className={styles.langOption} onClick={() => handleLangSelect('ES')}>🇪🇸 Spanish</div>
+              <div className={styles.langOption} onClick={() => handleLangSelect('FR')}>🇫🇷 French</div>
+            </div>
+          )}
+        </div>
+
+        {/* Theme Toggle */}
+        <button className={styles.iconBtn} onClick={toggleTheme} title="Toggle Theme">
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+
+        {/* Notifications */}
+        <button className={styles.iconBtn}>
+          <Bell size={20} />
+        </button>
+
+        {/* User Profile */}
+        <div className={styles.userProfile}>
+          <div className={styles.avatar}>
+            <User size={24} color="#4318ff" />
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
