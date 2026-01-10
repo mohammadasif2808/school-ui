@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User, AuthResponse } from '../../types';
+import { storage } from '../../utils/storage';
 
 interface AuthState {
   user: User | null;
@@ -8,9 +9,9 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  user: JSON.parse(localStorage.getItem('user') || 'null'),
-  token: localStorage.getItem('token'),
-  isAuthenticated: !!localStorage.getItem('token'),
+  user: storage.getUser(),
+  token: storage.getToken(),
+  isAuthenticated: storage.isAuthenticated(),
 };
 
 const authSlice = createSlice({
@@ -25,15 +26,15 @@ const authSlice = createSlice({
       state.user = user;
       state.token = token;
       state.isAuthenticated = true;
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('token', token);
+      storage.setUser(user);
+      storage.setToken(token);
     },
     logout: (state) => {
       state.user = null;
       state.token = null;
       state.isAuthenticated = false;
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
+      storage.clearUser();
+      storage.clearToken();
     },
   },
 });
