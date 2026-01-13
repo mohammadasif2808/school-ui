@@ -1,31 +1,30 @@
 import api from '../../services/apiClient';
-import { User } from '../../types';
+import { User, BackendUser, AuthResponse } from '../../types';
 
 export const authService = {
   // Login function
-  login: async (identifier: string, password: string): Promise<User> => {
-    // In a real app, you would use:
-    // const response = await api.post('/auth/login', { identifier, password });
-    // return response.data;
+  login: async (username: string, password: string): Promise<User> => {
+    try {
+      const response = await api.post<AuthResponse>('/auth/signin', { username, password });
+      
+      const { accessToken, user } = response.data;
+      
+      // Transform backend response to our internal User format
+      // We append the token to the user object as our legacy code expects it there sometimes
+      const mappedUser: User = {
+        ...user,
+        token: accessToken,
+        name: `${user.first_name} ${user.last_name}` // Derived field for UI compatibility
+      };
 
-    // MOCK LOGIN for prototype
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Accept either the legacy email or the new username
-        if ((identifier === 'admin@school.com' || identifier === 'DEV0001') && (password === 'admin123' || password === 'password123')) {
-          const mockUser: User = {
-            id: 1,
-            name: 'Admin User',
-            email: identifier.includes('@') ? identifier : 'dev0001@school.com',
-            role: 'admin',
-            token: 'mock-jwt-token-xyz',
-          };
-          resolve(mockUser);
-        } else {
-          reject(new Error('Invalid credentials'));
-        }
-      }, 1000);
-    });
+      // Persist token immediately (redundant if interceptor handles it, but safe)
+      localStorage.setItem('token', accessToken);
+      
+      return mappedUser;
+    } catch (error: any) {
+      console.error("Login failed:", error);
+      throw new Error(error.response?.data?.message || "Login failed");
+    }
   },
 
   // Register function
@@ -41,7 +40,13 @@ export const authService = {
   
   // Get current user profile
   getProfile: async (): Promise<User> => {
-     const response = await api.get('/auth/me');
-     return response.data;
+     const response = await api.get<BackendUser>('/auth/me');
+     const user = response.data;
+     
+     // Map BackendUser to User
+     return {
+        ...user,
+        name: `${user.first_name} ${user.last_name}`
+     };
   }
 };
