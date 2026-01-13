@@ -1,0 +1,47 @@
+# API Architecture Restructuring Summary
+Date: Monday, 12 January 2026
+
+## 1. Core Architecture Changes
+- **Centralized Axios Client**: Moved and renamed `src/services/api.ts` to `src/services/apiClient.ts`. This acts as the single source of truth for global HTTP configurations, headers, and interceptors.
+- **Shared Types**: Created `src/services/types.ts` to house common API response/request interfaces.
+- **Root RTK Query Slice**: Maintained `src/store/apiSlice.ts` as the base for all feature-specific API injections.
+
+## 2. Modular Feature Updates
+Each feature now contains its own `api/` directory with self-contained logic and types, facilitating a "plug-and-play" architecture.
+
+### A. Authentication Module (`src/features/auth/`)
+- **RTK Query**: `src/features/auth/api.ts` handles automated login mutations.
+- **Auth Service**: `src/features/auth/authService.ts` contains manual logic (mock login, token management).
+- **Context Integration**: Updated `AuthContext.tsx` to reflect new import paths.
+
+### B. Peoples Module (`src/features/peoples/`)
+- **New API Slice**: Created `src/features/peoples/api/api.ts` with endpoints for `getStudents` and `getStaff`.
+- **Feature Types**: Created `src/features/peoples/api/types.ts` defining `Student` and `Staff` interfaces.
+
+### C. Front Office Module (`src/features/front-office/`)
+- **New API Slice**: Created `src/features/front-office/api/api.ts` with endpoints for `getAdmissionEnquiries`.
+- **Feature Types**: Created `src/features/front-office/api/types.ts` defining `AdmissionEnquiry` interfaces.
+
+## 3. Directory Structure After Changes
+src/
+├── services/
+│   ├── apiClient.ts      # Shared Axios Instance
+│   └── types.ts          # Shared API Types
+├── store/
+│   └── apiSlice.ts       # RTK Query Base
+└── features/
+    ├── auth/
+    │   ├── api.ts        # Auth RTK Query
+    │   └── authService.ts # Auth Logic
+    ├── peoples/
+    │   └── api/
+    │       ├── api.ts    # Peoples RTK Query
+    │       └── types.ts  # Peoples Types
+    └── front-office/
+        └── api/
+            ├── api.ts    # Front Office RTK Query
+            └── types.ts  # Front Office Types
+
+## 4. Verification Results
+- **Linting**: `npm run lint` passed with zero errors.
+- **Build**: `npm run build` completed successfully, ensuring all imports and dependencies are correctly resolved.

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { authService } from '../services/authService';
+import { authService } from '../features/auth/authService';
 import { User, AuthResponse } from '../types';
 import { 
   setCredentials, 

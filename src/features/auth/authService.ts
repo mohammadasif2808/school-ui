@@ -1,5 +1,5 @@
-import api from './api';
-import { User } from '../types';
+import api from '../../services/apiClient';
+import { User } from '../../types';
 
 export const authService = {
   // Login function
