@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Bell, Search, User, Sun, Moon, Globe, LogOut, Settings, UserCircle } from 'lucide-react';
+import { Bell, Search, User, Sun, Moon, Globe, LogOut, Settings, UserCircle, Menu } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Header.module.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onMenuClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const { theme, toggleTheme } = useTheme();
   const { user, logout } = useAuth();
   
@@ -24,6 +28,11 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
+      {/* Mobile Menu Button */}
+      <button className={styles.menuBtn} onClick={onMenuClick}>
+        <Menu size={24} />
+      </button>
+
       {/* Search Bar */}
       <div className={styles.searchBar}>
         <Search size={18} />
