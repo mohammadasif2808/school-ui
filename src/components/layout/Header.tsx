@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Bell, Search, User, Sun, Moon, Globe, LogOut, Settings, UserCircle, Menu } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
@@ -9,6 +10,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
+  const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
   const { user, logout } = useAuth();
   
@@ -23,6 +25,11 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
 
   const handleLogout = () => {
     logout();
+    setProfileOpen(false);
+  };
+
+  const handleProfileClick = () => {
+    navigate('/profile');
     setProfileOpen(false);
   };
 
@@ -90,7 +97,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                 <span className={styles.userRole}>{user?.role || 'Visitor'}</span>
               </div>
               
-              <div className={styles.menuItem}>
+              <div className={styles.menuItem} onClick={handleProfileClick}>
                 <UserCircle size={16} />
                 <span>My Profile</span>
               </div>
