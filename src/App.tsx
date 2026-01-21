@@ -10,6 +10,7 @@ import DashboardPage from './features/dashboard/pages/DashboardPage';
 
 // Features - Auth
 import LoginPage from './features/auth/pages/LoginPage';
+import ProfilePage from './features/auth/pages/ProfilePage';
 
 // Features - Front Office
 import VisitorsLogPage from './features/front-office/pages/VisitorsLogPage';
@@ -47,6 +48,7 @@ const App: React.FC = () => {
               </ProtectedRoute>
             }>
               <Route index element={<DashboardPage />} />
+              <Route path="profile" element={<ProfilePage />} />
               
               {/* Front Office Routes */}
               <Route path="front-office">
